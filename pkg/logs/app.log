@@ -1,0 +1,48 @@
+{"time":"2024-08-10T14:14:14.886235484+05:00","level":"ERROR","msg":"Error connecting to database","error":"pq: database \"medcian_auth\" does not exist"}
+{"time":"2024-08-10T14:34:52.071126244+05:00","level":"ERROR","msg":"Error login user","error":"must pass a pointer, not a value, to StructScan destination"}
+{"time":"2024-08-10T14:34:52.071621175+05:00","level":"ERROR","msg":"Error in AuthService.Login","error":"must pass a pointer, not a value, to StructScan destination"}
+{"time":"2024-08-10T14:39:27.100934226+05:00","level":"ERROR","msg":"Error registering user","error":"pq: invalid input value for enum gender: \"string\""}
+{"time":"2024-08-10T14:39:27.100985996+05:00","level":"ERROR","msg":"Error in AuthService.Register","error":"pq: invalid input value for enum gender: \"string\""}
+{"time":"2024-08-10T14:39:48.023474446+05:00","level":"ERROR","msg":"Error registering user","error":"pq: invalid input value for enum gender: \"mali\""}
+{"time":"2024-08-10T14:39:48.023508814+05:00","level":"ERROR","msg":"Error in AuthService.Register","error":"pq: invalid input value for enum gender: \"mali\""}
+{"time":"2024-08-10T14:39:59.165681534+05:00","level":"ERROR","msg":"Error registering user","error":"pq: invalid input value for enum gender: \"mail\""}
+{"time":"2024-08-10T14:39:59.165706704+05:00","level":"ERROR","msg":"Error in AuthService.Register","error":"pq: invalid input value for enum gender: \"mail\""}
+{"time":"2024-08-10T14:40:45.84243271+05:00","level":"ERROR","msg":"Error login user","error":"must pass a pointer, not a value, to StructScan destination"}
+{"time":"2024-08-10T14:40:45.842491113+05:00","level":"ERROR","msg":"Error in AuthService.Login","error":"must pass a pointer, not a value, to StructScan destination"}
+{"time":"2024-08-10T14:41:07.097070443+05:00","level":"ERROR","msg":"Error login user","error":"must pass a pointer, not a value, to StructScan destination"}
+{"time":"2024-08-10T14:41:07.097128245+05:00","level":"ERROR","msg":"Error in AuthService.Login","error":"must pass a pointer, not a value, to StructScan destination"}
+{"time":"2024-08-10T14:42:44.221286408+05:00","level":"ERROR","msg":"Error login user","error":"must pass a pointer, not a value, to StructScan destination"}
+{"time":"2024-08-10T14:42:44.221488555+05:00","level":"ERROR","msg":"Error in AuthService.Login","error":"must pass a pointer, not a value, to StructScan destination"}
+{"time":"2024-08-10T22:43:37.182927839+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T11:58:47.483539847+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:01:01.485858934+05:00","level":"ERROR","msg":"Error login user","error":"user not found"}
+{"time":"2024-08-11T12:01:01.485921031+05:00","level":"ERROR","msg":"Error in AuthService.Login","error":"user not found"}
+{"time":"2024-08-11T12:05:59.926584815+05:00","level":"ERROR","msg":"Error in GetUserProfile","error":"pq: invalid input syntax for type uuid: \"\""}
+{"time":"2024-08-11T12:07:10.224215323+05:00","level":"ERROR","msg":"Error in GetUserProfile","error":"pq: invalid input syntax for type uuid: \"\""}
+{"time":"2024-08-11T12:09:42.906784008+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:11:22.406770771+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:11:40.251698015+05:00","level":"ERROR","msg":"Error in GetUserProfile","error":"pq: invalid input syntax for type uuid: \"\""}
+{"time":"2024-08-11T12:12:32.026835492+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:13:03.288431534+05:00","level":"ERROR","msg":"Error in GetUserProfile","error":"pq: invalid input syntax for type uuid: \"\""}
+{"time":"2024-08-11T12:13:55.027238221+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:14:25.284664376+05:00","level":"ERROR","msg":"Error in GetUserProfile","error":"pq: invalid input syntax for type uuid: \"\""}
+{"time":"2024-08-11T12:17:36.276233901+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:21:42.002867176+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:25:56.665130103+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:30:35.040257426+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:31:26.550447866+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:33:06.995005485+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:35:46.29432795+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:37:14.951809479+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:42:42.81990685+05:00","level":"ERROR","msg":"Error in GetAllUsers","error":"sql: converting argument $1 type: unsupported type []interface {}, a slice of interface"}
+{"time":"2024-08-11T12:44:29.051574871+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:44:33.804704962+05:00","level":"ERROR","msg":"Error in GetAllUsers","error":"sql: converting argument $1 type: unsupported type []interface {}, a slice of interface"}
+{"time":"2024-08-11T12:44:43.714743139+05:00","level":"ERROR","msg":"Error in GetAllUsers","error":"sql: converting argument $1 type: unsupported type []interface {}, a slice of interface"}
+{"time":"2024-08-11T12:45:02.295666769+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:45:07.20325152+05:00","level":"ERROR","msg":"Error in GetAllUsers","error":"sql: converting argument $1 type: unsupported type []interface {}, a slice of interface"}
+{"time":"2024-08-11T12:53:50.002986969+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:54:05.425229943+05:00","level":"ERROR","msg":"Error in GetAllUsers","error":"sql: converting argument $1 type: unsupported type []interface {}, a slice of interface"}
+{"time":"2024-08-11T12:55:25.462333951+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:55:26.984906525+05:00","level":"ERROR","msg":"Error in GetAllUsers","error":"sql: converting argument $1 type: unsupported type []interface {}, a slice of interface"}
+{"time":"2024-08-11T12:57:08.379086701+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
+{"time":"2024-08-11T12:58:54.545278328+05:00","level":"ERROR","msg":"Error in CreateUser","error":"pq: duplicate key value violates unique constraint \"users_email_key\""}
