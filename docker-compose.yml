@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    environment:
+      MongoURI: mongodb://mongodb:27017
+    ports:
+      - "27117:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - healthNet
+    healthcheck:
+      test: [ "CMD", "mongo", "--eval", "db.adminCommand('ping')" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  health-analytic:
+    container_name: health
+    build: .
+    depends_on:
+      - mongodb
+    networks:
+      - healthNet
+    ports:
+      - 50051:50051
+
+networks:
+  healthNet:
+    name: healthNet
+    driver: bridge
+
+volumes:
+  mongo_data:

@@ -46,3 +46,23 @@
 {"time":"2024-08-11T12:55:26.984906525+05:00","level":"ERROR","msg":"Error in GetAllUsers","error":"sql: converting argument $1 type: unsupported type []interface {}, a slice of interface"}
 {"time":"2024-08-11T12:57:08.379086701+05:00","level":"INFO","msg":"gRPC server listening on :50050"}
 {"time":"2024-08-11T12:58:54.545278328+05:00","level":"ERROR","msg":"Error in CreateUser","error":"pq: duplicate key value violates unique constraint \"users_email_key\""}
+{"time":"2024-08-12T10:05:49.562355834+05:00","level":"ERROR","msg":"Error in MongoDB","error":"server selection error: server selection timeout, current topology: { Type: Unknown, Servers: [{ Addr: localhost:27017, Type: Unknown, Last error: dial tcp 127.0.0.1:27017: connect: connection refused }, ] }"}
+{"time":"2024-08-12T16:45:56.970470999+05:00","level":"ERROR","msg":"Failed to update medical record","error":"mongo: no documents in result"}
+{"time":"2024-08-12T17:08:43.170287537+05:00","level":"ERROR","msg":"Failed to update medical record","error":"mongo: no documents in result"}
+{"time":"2024-08-12T17:12:45.889051528+05:00","level":"ERROR","msg":"Failed to update medical record","error":"mongo: no documents in result"}
+{"time":"2024-08-12T17:15:21.910081855+05:00","level":"ERROR","msg":"Failed to update medical record","error":"mongo: no documents in result"}
+{"time":"2024-08-12T17:21:37.958052458+05:00","level":"ERROR","msg":"Failed to update medical record","error":"medical record with ID string not found"}
+{"time":"2024-08-12T23:47:00.340029384+05:00","level":"ERROR","msg":"Failed to get daily health summary","error":"mongo: no documents in result"}
+{"time":"2024-08-12T23:47:27.150679774+05:00","level":"ERROR","msg":"Failed to get weekly health summary","error":"mongo: no documents in result"}
+{"time":"2024-08-13T01:39:14.079573596+05:00","level":"ERROR","msg":"Error in Unmarshal","error":"json: Unmarshal(nil *healthAnalytics.AddMedicalRecordRequest)"}
+{"time":"2024-08-13T03:41:13.586663754+05:00","level":"ERROR","msg":"Error in MongoDB","error":"server selection error: server selection timeout, current topology: { Type: Unknown, Servers: [{ Addr: localhost:27017, Type: Unknown, Last error: dial tcp 127.0.0.1:27017: connect: connection refused }, ] }"}
+{"time":"2024-08-13T14:44:44.02303367+05:00","level":"ERROR","msg":"Failed to get daily health summary","error":"results argument must be a pointer to a slice, but was a pointer to ptr"}
+{"time":"2024-08-13T14:45:01.431252785+05:00","level":"ERROR","msg":"Failed to get daily health summary","error":"results argument must be a pointer to a slice, but was a pointer to ptr"}
+{"time":"2024-08-13T14:45:23.878854586+05:00","level":"ERROR","msg":"Error in net/Listen","error":"listen tcp :50051: bind: address already in use"}
+{"time":"2024-08-13T16:00:11.344497542+05:00","level":"ERROR","msg":"Error in net/Listen","error":"listen tcp :50051: bind: address already in use"}
+{"time":"2024-08-14T09:03:24.930279464+05:00","level":"ERROR","msg":"Error in MongoDB","error":"server selection error: server selection timeout, current topology: { Type: Unknown, Servers: [{ Addr: mongo:27017, Type: Unknown, Last error: dial tcp: lookup mongo on 127.0.0.53:53: server misbehaving }, ] }"}
+{"time":"2024-08-14T09:11:49.466920092+05:00","level":"ERROR","msg":"Error in MongoDB","error":"server selection error: server selection timeout, current topology: { Type: Unknown, Servers: [{ Addr: mongo:27017, Type: Unknown, Last error: dial tcp: lookup mongo on 127.0.0.53:53: server misbehaving }, ] }"}
+{"time":"2024-08-14T09:13:48.901233896+05:00","level":"ERROR","msg":"Error in RabbitMQ","error":"dial tcp: lookup rabbitmq on 127.0.0.53:53: server misbehaving"}
+{"time":"2024-08-14T09:13:56.744710756+05:00","level":"ERROR","msg":"Error in RabbitMQ","error":"dial tcp: lookup rabbitmq on 127.0.0.53:53: server misbehaving"}
+{"time":"2024-08-14T09:14:36.806685476+05:00","level":"ERROR","msg":"Error in RabbitMQ","error":"dial tcp: lookup rabbitmq on 127.0.0.53:53: server misbehaving"}
+{"time":"2024-08-14T18:26:47.733565676+05:00","level":"ERROR","msg":"Error getting lifestyle data","error":"mongo: no documents in result"}

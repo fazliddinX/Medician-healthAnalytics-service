@@ -19,17 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion8
 
 const (
-	HealthAnalyticsService_AddMedicalRecord_FullMethodName    = "/health.HealthAnalyticsService/AddMedicalRecord"
-	HealthAnalyticsService_GetMedicalRecord_FullMethodName    = "/health.HealthAnalyticsService/GetMedicalRecord"
-	HealthAnalyticsService_UpdateMedicalRecord_FullMethodName = "/health.HealthAnalyticsService/UpdateMedicalRecord"
-	HealthAnalyticsService_DeleteMedicalRecord_FullMethodName = "/health.HealthAnalyticsService/DeleteMedicalRecord"
-	HealthAnalyticsService_ListMedicalRecords_FullMethodName  = "/health.HealthAnalyticsService/ListMedicalRecords"
+	MedicalRecordsService_AddMedicalRecord_FullMethodName    = "/health.MedicalRecordsService/AddMedicalRecord"
+	MedicalRecordsService_GetMedicalRecord_FullMethodName    = "/health.MedicalRecordsService/GetMedicalRecord"
+	MedicalRecordsService_UpdateMedicalRecord_FullMethodName = "/health.MedicalRecordsService/UpdateMedicalRecord"
+	MedicalRecordsService_DeleteMedicalRecord_FullMethodName = "/health.MedicalRecordsService/DeleteMedicalRecord"
+	MedicalRecordsService_ListMedicalRecords_FullMethodName  = "/health.MedicalRecordsService/ListMedicalRecords"
 )
 
-// HealthAnalyticsServiceClient is the client API for HealthAnalyticsService service.
+// MedicalRecordsServiceClient is the client API for MedicalRecordsService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type HealthAnalyticsServiceClient interface {
+type MedicalRecordsServiceClient interface {
 	// --------------- Medical Records -------------------------
 	AddMedicalRecord(ctx context.Context, in *AddMedicalRecordRequest, opts ...grpc.CallOption) (*MedicalRecord, error)
 	GetMedicalRecord(ctx context.Context, in *MedicalRecordID, opts ...grpc.CallOption) (*MedicalRecord, error)
@@ -38,226 +38,225 @@ type HealthAnalyticsServiceClient interface {
 	ListMedicalRecords(ctx context.Context, in *MedicalRecordFilter, opts ...grpc.CallOption) (*ListMedicalRecord, error)
 }
 
-type healthAnalyticsServiceClient struct {
+type medicalRecordsServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewHealthAnalyticsServiceClient(cc grpc.ClientConnInterface) HealthAnalyticsServiceClient {
-	return &healthAnalyticsServiceClient{cc}
+func NewMedicalRecordsServiceClient(cc grpc.ClientConnInterface) MedicalRecordsServiceClient {
+	return &medicalRecordsServiceClient{cc}
 }
 
-func (c *healthAnalyticsServiceClient) AddMedicalRecord(ctx context.Context, in *AddMedicalRecordRequest, opts ...grpc.CallOption) (*MedicalRecord, error) {
+func (c *medicalRecordsServiceClient) AddMedicalRecord(ctx context.Context, in *AddMedicalRecordRequest, opts ...grpc.CallOption) (*MedicalRecord, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(MedicalRecord)
-	err := c.cc.Invoke(ctx, HealthAnalyticsService_AddMedicalRecord_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, MedicalRecordsService_AddMedicalRecord_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *healthAnalyticsServiceClient) GetMedicalRecord(ctx context.Context, in *MedicalRecordID, opts ...grpc.CallOption) (*MedicalRecord, error) {
+func (c *medicalRecordsServiceClient) GetMedicalRecord(ctx context.Context, in *MedicalRecordID, opts ...grpc.CallOption) (*MedicalRecord, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(MedicalRecord)
-	err := c.cc.Invoke(ctx, HealthAnalyticsService_GetMedicalRecord_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, MedicalRecordsService_GetMedicalRecord_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *healthAnalyticsServiceClient) UpdateMedicalRecord(ctx context.Context, in *UpdateMedicalRecordReq, opts ...grpc.CallOption) (*MedicalRecord, error) {
+func (c *medicalRecordsServiceClient) UpdateMedicalRecord(ctx context.Context, in *UpdateMedicalRecordReq, opts ...grpc.CallOption) (*MedicalRecord, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(MedicalRecord)
-	err := c.cc.Invoke(ctx, HealthAnalyticsService_UpdateMedicalRecord_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, MedicalRecordsService_UpdateMedicalRecord_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *healthAnalyticsServiceClient) DeleteMedicalRecord(ctx context.Context, in *MedicalRecordID, opts ...grpc.CallOption) (*Message1, error) {
+func (c *medicalRecordsServiceClient) DeleteMedicalRecord(ctx context.Context, in *MedicalRecordID, opts ...grpc.CallOption) (*Message1, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(Message1)
-	err := c.cc.Invoke(ctx, HealthAnalyticsService_DeleteMedicalRecord_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, MedicalRecordsService_DeleteMedicalRecord_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *healthAnalyticsServiceClient) ListMedicalRecords(ctx context.Context, in *MedicalRecordFilter, opts ...grpc.CallOption) (*ListMedicalRecord, error) {
+func (c *medicalRecordsServiceClient) ListMedicalRecords(ctx context.Context, in *MedicalRecordFilter, opts ...grpc.CallOption) (*ListMedicalRecord, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(ListMedicalRecord)
-	err := c.cc.Invoke(ctx, HealthAnalyticsService_ListMedicalRecords_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, MedicalRecordsService_ListMedicalRecords_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// HealthAnalyticsServiceServer is the server API for HealthAnalyticsService service.
-// All implementations must embed UnimplementedHealthAnalyticsServiceServer
+// MedicalRecordsServiceServer is the server API for MedicalRecordsService service.
+// All implementations must embed UnimplementedMedicalRecordsServiceServer
 // for forward compatibility
-type HealthAnalyticsServiceServer interface {
+type MedicalRecordsServiceServer interface {
 	// --------------- Medical Records -------------------------
 	AddMedicalRecord(context.Context, *AddMedicalRecordRequest) (*MedicalRecord, error)
 	GetMedicalRecord(context.Context, *MedicalRecordID) (*MedicalRecord, error)
 	UpdateMedicalRecord(context.Context, *UpdateMedicalRecordReq) (*MedicalRecord, error)
 	DeleteMedicalRecord(context.Context, *MedicalRecordID) (*Message1, error)
 	ListMedicalRecords(context.Context, *MedicalRecordFilter) (*ListMedicalRecord, error)
-	mustEmbedUnimplementedHealthAnalyticsServiceServer()
+	mustEmbedUnimplementedMedicalRecordsServiceServer()
 }
 
-// UnimplementedHealthAnalyticsServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedHealthAnalyticsServiceServer struct {
+// UnimplementedMedicalRecordsServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedMedicalRecordsServiceServer struct {
 }
 
-func (UnimplementedHealthAnalyticsServiceServer) AddMedicalRecord(context.Context, *AddMedicalRecordRequest) (*MedicalRecord, error) {
+func (UnimplementedMedicalRecordsServiceServer) AddMedicalRecord(context.Context, *AddMedicalRecordRequest) (*MedicalRecord, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddMedicalRecord not implemented")
 }
-func (UnimplementedHealthAnalyticsServiceServer) GetMedicalRecord(context.Context, *MedicalRecordID) (*MedicalRecord, error) {
+func (UnimplementedMedicalRecordsServiceServer) GetMedicalRecord(context.Context, *MedicalRecordID) (*MedicalRecord, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetMedicalRecord not implemented")
 }
-func (UnimplementedHealthAnalyticsServiceServer) UpdateMedicalRecord(context.Context, *UpdateMedicalRecordReq) (*MedicalRecord, error) {
+func (UnimplementedMedicalRecordsServiceServer) UpdateMedicalRecord(context.Context, *UpdateMedicalRecordReq) (*MedicalRecord, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateMedicalRecord not implemented")
 }
-func (UnimplementedHealthAnalyticsServiceServer) DeleteMedicalRecord(context.Context, *MedicalRecordID) (*Message1, error) {
+func (UnimplementedMedicalRecordsServiceServer) DeleteMedicalRecord(context.Context, *MedicalRecordID) (*Message1, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteMedicalRecord not implemented")
 }
-func (UnimplementedHealthAnalyticsServiceServer) ListMedicalRecords(context.Context, *MedicalRecordFilter) (*ListMedicalRecord, error) {
+func (UnimplementedMedicalRecordsServiceServer) ListMedicalRecords(context.Context, *MedicalRecordFilter) (*ListMedicalRecord, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListMedicalRecords not implemented")
 }
-func (UnimplementedHealthAnalyticsServiceServer) mustEmbedUnimplementedHealthAnalyticsServiceServer() {
-}
+func (UnimplementedMedicalRecordsServiceServer) mustEmbedUnimplementedMedicalRecordsServiceServer() {}
 
-// UnsafeHealthAnalyticsServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to HealthAnalyticsServiceServer will
+// UnsafeMedicalRecordsServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to MedicalRecordsServiceServer will
 // result in compilation errors.
-type UnsafeHealthAnalyticsServiceServer interface {
-	mustEmbedUnimplementedHealthAnalyticsServiceServer()
+type UnsafeMedicalRecordsServiceServer interface {
+	mustEmbedUnimplementedMedicalRecordsServiceServer()
 }
 
-func RegisterHealthAnalyticsServiceServer(s grpc.ServiceRegistrar, srv HealthAnalyticsServiceServer) {
-	s.RegisterService(&HealthAnalyticsService_ServiceDesc, srv)
+func RegisterMedicalRecordsServiceServer(s grpc.ServiceRegistrar, srv MedicalRecordsServiceServer) {
+	s.RegisterService(&MedicalRecordsService_ServiceDesc, srv)
 }
 
-func _HealthAnalyticsService_AddMedicalRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MedicalRecordsService_AddMedicalRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AddMedicalRecordRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HealthAnalyticsServiceServer).AddMedicalRecord(ctx, in)
+		return srv.(MedicalRecordsServiceServer).AddMedicalRecord(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: HealthAnalyticsService_AddMedicalRecord_FullMethodName,
+		FullMethod: MedicalRecordsService_AddMedicalRecord_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HealthAnalyticsServiceServer).AddMedicalRecord(ctx, req.(*AddMedicalRecordRequest))
+		return srv.(MedicalRecordsServiceServer).AddMedicalRecord(ctx, req.(*AddMedicalRecordRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _HealthAnalyticsService_GetMedicalRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MedicalRecordsService_GetMedicalRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MedicalRecordID)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HealthAnalyticsServiceServer).GetMedicalRecord(ctx, in)
+		return srv.(MedicalRecordsServiceServer).GetMedicalRecord(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: HealthAnalyticsService_GetMedicalRecord_FullMethodName,
+		FullMethod: MedicalRecordsService_GetMedicalRecord_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HealthAnalyticsServiceServer).GetMedicalRecord(ctx, req.(*MedicalRecordID))
+		return srv.(MedicalRecordsServiceServer).GetMedicalRecord(ctx, req.(*MedicalRecordID))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _HealthAnalyticsService_UpdateMedicalRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MedicalRecordsService_UpdateMedicalRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateMedicalRecordReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HealthAnalyticsServiceServer).UpdateMedicalRecord(ctx, in)
+		return srv.(MedicalRecordsServiceServer).UpdateMedicalRecord(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: HealthAnalyticsService_UpdateMedicalRecord_FullMethodName,
+		FullMethod: MedicalRecordsService_UpdateMedicalRecord_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HealthAnalyticsServiceServer).UpdateMedicalRecord(ctx, req.(*UpdateMedicalRecordReq))
+		return srv.(MedicalRecordsServiceServer).UpdateMedicalRecord(ctx, req.(*UpdateMedicalRecordReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _HealthAnalyticsService_DeleteMedicalRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MedicalRecordsService_DeleteMedicalRecord_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MedicalRecordID)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HealthAnalyticsServiceServer).DeleteMedicalRecord(ctx, in)
+		return srv.(MedicalRecordsServiceServer).DeleteMedicalRecord(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: HealthAnalyticsService_DeleteMedicalRecord_FullMethodName,
+		FullMethod: MedicalRecordsService_DeleteMedicalRecord_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HealthAnalyticsServiceServer).DeleteMedicalRecord(ctx, req.(*MedicalRecordID))
+		return srv.(MedicalRecordsServiceServer).DeleteMedicalRecord(ctx, req.(*MedicalRecordID))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _HealthAnalyticsService_ListMedicalRecords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _MedicalRecordsService_ListMedicalRecords_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MedicalRecordFilter)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HealthAnalyticsServiceServer).ListMedicalRecords(ctx, in)
+		return srv.(MedicalRecordsServiceServer).ListMedicalRecords(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: HealthAnalyticsService_ListMedicalRecords_FullMethodName,
+		FullMethod: MedicalRecordsService_ListMedicalRecords_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HealthAnalyticsServiceServer).ListMedicalRecords(ctx, req.(*MedicalRecordFilter))
+		return srv.(MedicalRecordsServiceServer).ListMedicalRecords(ctx, req.(*MedicalRecordFilter))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// HealthAnalyticsService_ServiceDesc is the grpc.ServiceDesc for HealthAnalyticsService service.
+// MedicalRecordsService_ServiceDesc is the grpc.ServiceDesc for MedicalRecordsService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var HealthAnalyticsService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "health.HealthAnalyticsService",
-	HandlerType: (*HealthAnalyticsServiceServer)(nil),
+var MedicalRecordsService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "health.MedicalRecordsService",
+	HandlerType: (*MedicalRecordsServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "AddMedicalRecord",
-			Handler:    _HealthAnalyticsService_AddMedicalRecord_Handler,
+			Handler:    _MedicalRecordsService_AddMedicalRecord_Handler,
 		},
 		{
 			MethodName: "GetMedicalRecord",
-			Handler:    _HealthAnalyticsService_GetMedicalRecord_Handler,
+			Handler:    _MedicalRecordsService_GetMedicalRecord_Handler,
 		},
 		{
 			MethodName: "UpdateMedicalRecord",
-			Handler:    _HealthAnalyticsService_UpdateMedicalRecord_Handler,
+			Handler:    _MedicalRecordsService_UpdateMedicalRecord_Handler,
 		},
 		{
 			MethodName: "DeleteMedicalRecord",
-			Handler:    _HealthAnalyticsService_DeleteMedicalRecord_Handler,
+			Handler:    _MedicalRecordsService_DeleteMedicalRecord_Handler,
 		},
 		{
 			MethodName: "ListMedicalRecords",
-			Handler:    _HealthAnalyticsService_ListMedicalRecords_Handler,
+			Handler:    _MedicalRecordsService_ListMedicalRecords_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

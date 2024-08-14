@@ -11,16 +11,10 @@ import (
 )
 
 type Config struct {
-	SECRET_KEY_ACCESS  string
-	SECRET_KEY_REFRESH string
-	HOST               string
-	GIN_SERVER_PORT    string
-	GRPC_SERVER_PORT   string
-	DB_PORT            string
-	DB_HOST            string
-	DB_USER            string
-	DB_PASSWORD        string
-	DB_NAME            string
+	HOST             string
+	GRPC_SERVER_PORT string
+	MONGO_URL        string
+	RABBIT_URL       string
 }
 
 func Load() Config {
@@ -31,15 +25,10 @@ func Load() Config {
 
 	config := Config{}
 
-	config.GIN_SERVER_PORT = cast.ToString(coalesce("GIN_SERVER_PORT", ":8081"))
+	config.HOST = cast.ToString(coalesce("GIN_SERVER_PORT", ":8081"))
 	config.GRPC_SERVER_PORT = cast.ToString(coalesce("GRPC_SERVER_PORT", ":50050"))
-	config.DB_HOST = cast.ToString(coalesce("DB_HOST", "localhost"))
-	config.DB_PORT = cast.ToString(coalesce("DB_PORT", "5432"))
-	config.DB_NAME = cast.ToString(coalesce("DB_NAME", "ecommerce_auth_service"))
-	config.DB_USER = cast.ToString(coalesce("DB_USER", "postgres"))
-	config.DB_PASSWORD = cast.ToString(coalesce("DB_PASSWORD", "123321"))
-	config.SECRET_KEY_ACCESS = cast.ToString(coalesce("SECRET_KEY_ACCESS", "secret_key"))
-	config.SECRET_KEY_REFRESH = cast.ToString(coalesce("SECRET_KEY_REFRESH", "not so easy"))
+	config.MONGO_URL = cast.ToString(coalesce("MONGO_URL", "mongodb://mongo:27017"))
+	config.RABBIT_URL = cast.ToString(coalesce("RABBIT_URL", "amqp://guest:guest@rabbitmq:5672/"))
 
 	return config
 }

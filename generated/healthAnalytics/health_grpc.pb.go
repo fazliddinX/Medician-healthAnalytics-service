@@ -36,9 +36,9 @@ type HealthRecommendationsServiceClient interface {
 	GetHealthRecommendations(ctx context.Context, in *HealthRecommendationID, opts ...grpc.CallOption) (*HealthRecommendation, error)
 	GetAllHealthRecommendations(ctx context.Context, in *UserID, opts ...grpc.CallOption) (*UserHealthRecommendation, error)
 	// ----------------- Health Monitoring -----------------------
-	GetRealtimeHealthMonitoring(ctx context.Context, in *Void, opts ...grpc.CallOption) (*AllHealthRecommendations, error)
-	GetDailyHealthSummary(ctx context.Context, in *Void, opts ...grpc.CallOption) (*AllHealthRecommendations, error)
-	GetWeeklyHealthSummary(ctx context.Context, in *Void, opts ...grpc.CallOption) (*AllHealthRecommendations, error)
+	GetRealtimeHealthMonitoring(ctx context.Context, in *Void, opts ...grpc.CallOption) (*MonitoringRealTime, error)
+	GetDailyHealthSummary(ctx context.Context, in *Void, opts ...grpc.CallOption) (*Monitoring, error)
+	GetWeeklyHealthSummary(ctx context.Context, in *Void, opts ...grpc.CallOption) (*Monitoring, error)
 }
 
 type healthRecommendationsServiceClient struct {
@@ -79,9 +79,9 @@ func (c *healthRecommendationsServiceClient) GetAllHealthRecommendations(ctx con
 	return out, nil
 }
 
-func (c *healthRecommendationsServiceClient) GetRealtimeHealthMonitoring(ctx context.Context, in *Void, opts ...grpc.CallOption) (*AllHealthRecommendations, error) {
+func (c *healthRecommendationsServiceClient) GetRealtimeHealthMonitoring(ctx context.Context, in *Void, opts ...grpc.CallOption) (*MonitoringRealTime, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(AllHealthRecommendations)
+	out := new(MonitoringRealTime)
 	err := c.cc.Invoke(ctx, HealthRecommendationsService_GetRealtimeHealthMonitoring_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -89,9 +89,9 @@ func (c *healthRecommendationsServiceClient) GetRealtimeHealthMonitoring(ctx con
 	return out, nil
 }
 
-func (c *healthRecommendationsServiceClient) GetDailyHealthSummary(ctx context.Context, in *Void, opts ...grpc.CallOption) (*AllHealthRecommendations, error) {
+func (c *healthRecommendationsServiceClient) GetDailyHealthSummary(ctx context.Context, in *Void, opts ...grpc.CallOption) (*Monitoring, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(AllHealthRecommendations)
+	out := new(Monitoring)
 	err := c.cc.Invoke(ctx, HealthRecommendationsService_GetDailyHealthSummary_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -99,9 +99,9 @@ func (c *healthRecommendationsServiceClient) GetDailyHealthSummary(ctx context.C
 	return out, nil
 }
 
-func (c *healthRecommendationsServiceClient) GetWeeklyHealthSummary(ctx context.Context, in *Void, opts ...grpc.CallOption) (*AllHealthRecommendations, error) {
+func (c *healthRecommendationsServiceClient) GetWeeklyHealthSummary(ctx context.Context, in *Void, opts ...grpc.CallOption) (*Monitoring, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(AllHealthRecommendations)
+	out := new(Monitoring)
 	err := c.cc.Invoke(ctx, HealthRecommendationsService_GetWeeklyHealthSummary_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -118,9 +118,9 @@ type HealthRecommendationsServiceServer interface {
 	GetHealthRecommendations(context.Context, *HealthRecommendationID) (*HealthRecommendation, error)
 	GetAllHealthRecommendations(context.Context, *UserID) (*UserHealthRecommendation, error)
 	// ----------------- Health Monitoring -----------------------
-	GetRealtimeHealthMonitoring(context.Context, *Void) (*AllHealthRecommendations, error)
-	GetDailyHealthSummary(context.Context, *Void) (*AllHealthRecommendations, error)
-	GetWeeklyHealthSummary(context.Context, *Void) (*AllHealthRecommendations, error)
+	GetRealtimeHealthMonitoring(context.Context, *Void) (*MonitoringRealTime, error)
+	GetDailyHealthSummary(context.Context, *Void) (*Monitoring, error)
+	GetWeeklyHealthSummary(context.Context, *Void) (*Monitoring, error)
 	mustEmbedUnimplementedHealthRecommendationsServiceServer()
 }
 
@@ -137,13 +137,13 @@ func (UnimplementedHealthRecommendationsServiceServer) GetHealthRecommendations(
 func (UnimplementedHealthRecommendationsServiceServer) GetAllHealthRecommendations(context.Context, *UserID) (*UserHealthRecommendation, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllHealthRecommendations not implemented")
 }
-func (UnimplementedHealthRecommendationsServiceServer) GetRealtimeHealthMonitoring(context.Context, *Void) (*AllHealthRecommendations, error) {
+func (UnimplementedHealthRecommendationsServiceServer) GetRealtimeHealthMonitoring(context.Context, *Void) (*MonitoringRealTime, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRealtimeHealthMonitoring not implemented")
 }
-func (UnimplementedHealthRecommendationsServiceServer) GetDailyHealthSummary(context.Context, *Void) (*AllHealthRecommendations, error) {
+func (UnimplementedHealthRecommendationsServiceServer) GetDailyHealthSummary(context.Context, *Void) (*Monitoring, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDailyHealthSummary not implemented")
 }
-func (UnimplementedHealthRecommendationsServiceServer) GetWeeklyHealthSummary(context.Context, *Void) (*AllHealthRecommendations, error) {
+func (UnimplementedHealthRecommendationsServiceServer) GetWeeklyHealthSummary(context.Context, *Void) (*Monitoring, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetWeeklyHealthSummary not implemented")
 }
 func (UnimplementedHealthRecommendationsServiceServer) mustEmbedUnimplementedHealthRecommendationsServiceServer() {

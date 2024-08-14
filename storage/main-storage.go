@@ -13,7 +13,7 @@ type MedicalRecordStorage interface {
 	ListMedicalRecords(ctx context.Context, in *pb.MedicalRecordFilter) (*pb.ListMedicalRecord, error)
 }
 
-type LifestyleStorageImpl interface {
+type LifestyleStorage interface {
 	AddLifestyleData(ctx context.Context, in *pb.Lifestyle) (*pb.LifestyleResponse, error)
 	GetLifestyleData(ctx context.Context, in *pb.LifestyleID) (*pb.LifestyleResponse, error)
 	GetAllLifestyleData(ctx context.Context, in *pb.LifestyleFilter) (*pb.AllLifestyles, error)
@@ -34,7 +34,7 @@ type HealthRecommendationsStorage interface {
 	GetHealthRecommendations(ctx context.Context, in *pb.HealthRecommendationID) (*pb.HealthRecommendation, error)
 	GetAllHealthRecommendations(ctx context.Context, in *pb.UserID) (*pb.UserHealthRecommendation, error)
 
-	GetRealtimeHealthMonitoring(ctx context.Context, in *pb.Void) (*pb.AllHealthRecommendations, error)
-	GetDailyHealthSummary(ctx context.Context, in *pb.Void) (*pb.AllHealthRecommendations, error)
-	GetWeeklyHealthSummary(ctx context.Context, in *pb.Void) (*pb.AllHealthRecommendations, error)
+	GetRealtimeHealthMonitoring(ctx context.Context, in *pb.Void) (*pb.MonitoringRealTime, error)
+	GetDailyHealthSummary(ctx context.Context, in *pb.Void) (*pb.Monitoring, error)
+	GetWeeklyHealthSummary(ctx context.Context, in *pb.Void) (*pb.Monitoring, error)
 }
