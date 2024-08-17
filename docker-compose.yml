@@ -33,6 +33,7 @@ networks:
   healthNet:
     name: healthNet
     driver: bridge
+    external: true
 
 volumes:
   mongo_data:
